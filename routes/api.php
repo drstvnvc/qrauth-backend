@@ -14,8 +14,10 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['namespace' => 'Api'], function() {
-    Route::post('users', 'UsersController@register');
-    Route::post('login', 'UsersController@login');
+    Route::group(['middleware' => 'guest'], function() {
+        Route::post('users', 'UsersController@register');
+        Route::post('login', 'UsersController@login');
+    });
 
     Route::group(['middleware' => 'auth:api'], function(){
         Route::get('profile', 'UsersController@getProfile');
