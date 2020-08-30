@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Auth\AuthenticationException;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\Api\UsersService;
+use App\Services\UsersService;
 use Auth;
 use App\Http\Requests\Users\RegisterRequest;
 use App\Http\Requests\Users\LoginRequest;
