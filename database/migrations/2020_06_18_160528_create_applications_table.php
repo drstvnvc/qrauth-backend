@@ -14,10 +14,11 @@ class CreateApplicationsTable extends Migration
     public function up()
     {
         Schema::create('applications', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('app_id')->unique();
-            $table->string('app_secret');
-            $table->string('homepage_url')->nullable(true);
+            $table->id();
+            $table->string('name');
+            $table->string('application_id')->unique();
+            $table->string('application_secret');
+            $table->string('homepage_url');
 
             $table->timestamps();
         });
